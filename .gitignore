@@ -1,0 +1,24 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore data dictionary
+data/
+
+# Other common files to ignore
+node_modules/
+*.log
+*.env
+
+# Ignore compiled files
+*.class
+*.pyc
+*.o
+*.out
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
