@@ -1,4 +1,4 @@
-'''This file allows users to manually balance exploration and exploitation by navigating the hierarchical tree structure.'''
+'''This file allows users to manually balance exploration and exploitation by navigating the hierarchy tree.'''
 import torch
 import random
 import pickle

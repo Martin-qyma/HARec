@@ -1,16 +1,16 @@
-# HARec: Hyperbolic Graph-LLM Alignment for Exploration and Exploitation in Recommender Systems
+# Breaking Information Cocoons: A Hyperbolic Graph-LLM Framework for Exploration and Exploitation in Recommender Systems
 
-PyTorch implementation for [HARec: Hyperbolic Graph-LLM Alignment for Exploration and Exploitation in Recommender Systems](https://arxiv.org/abs/2411.13865)
+PyTorch implementation for [Breaking Information Cocoons: A Hyperbolic Graph-LLM Framework for Exploration and Exploitation in Recommender Systems](https://arxiv.org/abs/2411.13865)
 
-> **HARec: Hyperbolic Graph-LLM Alignment for Exploration and Exploitation in Recommender Systems**\
+> **Breaking Information Cocoons: A Hyperbolic Graph-LLM Framework for Exploration and Exploitation in Recommender Systems**\
 > Qiyao Ma, Menglin Yang, Mingxuan Ju, Tong Zhao, Neil Shah, Rex Ying\
 > *arXiv 2024*
 
 -----
-This paper presents HARec, a hyperbolic representation learning framework that jointly aligns user-item collaborative information with textual descriptions in hyperbolic space. Our framework introduces two key technique novelty: (1) a hyperbolic hierarchical-aware graph-LLM alignment mechanism that enables better embedding representation, and (2) a hyperbolic hierarchical tree structure that facilitates user-adjustable exploration-exploitation trade-offs.
+This work proposes HERec, a hyperbolic graph-LLM framework that effectively balances exploration and exploitation in recommender systems. Our framework introduces two key innovations: (1) a hierarchical-aware graph-LLM mechanism that jointly aligns textual descriptions with user-item collaborative information in hyperbolic space, and (2) a hierarchical representation structure that enables user-adjustable exploration-exploitation trade-offs. Extensive experiments demonstrate that HERec consistently outperforms both Euclidean and hyperbolic baselines, achieving up to 5.49\% improvement in utility metrics and 11.39\% increase in diversity metrics, effectively mitigating information cocoons.
 
 <p align="center">
-<img src="HARec.png" alt="HARec" />
+<img src="framework.png" alt="HERec" />
 </p>
 
 ## Environment
@@ -34,8 +34,8 @@ Before running the following commands, please make sure you have downloaded the 
     ```
     python recommend.py --mode test --dataset {dataset}
     ```
-**Hyperbolic Hierarchical Structure:**
-- To build the hierarchical tree structure:
+**Hierarchical Representation Structure:**
+- To build the hierarchical representation structure:
     ```
     python hierarchy.py --mode build --dataset {dataset}
     ```
@@ -75,7 +75,7 @@ Prepare your Hugging Face user access token for downloading Llama 3 model.
 │   ├── prediction.pkl                    # predicted recommendation
 │   ├── {user/item}_converter.pkl         # converter to reconstruct user/item profile
 │   ├── profile_{ref/pref}.pkl            # origin/decoded user/item profile
-│   └── hierarchy_tree.pkl                # hierarchical tree structure
+│   └── hierarchy_tree.pkl                # hierarchy tree structure
 ├── decoder
 │   ├── utils
 │   ├── decoder.py                        # profile decoder model
@@ -84,7 +84,7 @@ Prepare your Hugging Face user access token for downloading Llama 3 model.
 ├── models                      
 │   ├── align.py                          # hyperbolic alignment model
 │   ├── balance.py                        # balance exploration-exploitation trade-off 
-│   └── clustering.py                     # build the hyperbolic hierarchical tree
+│   └── clustering.py                     # build the hierarchical representation structure
 ├── utils          
 ├── rgd                                   # Riemannian gradient descent optimizer
 ├── manifolds                             # hyperbolic manifolds
@@ -94,7 +94,7 @@ Prepare your Hugging Face user access token for downloading Llama 3 model.
 
 ## Citation
 
-If you find HARec helpful to your research or applications, please kindly cite:
+If you find HERec helpful to your research or applications, please kindly cite:
 
 ```bibtex
 @article{ma2024harec,

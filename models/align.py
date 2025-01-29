@@ -41,9 +41,9 @@ class HGCN(nn.Module):
         return h
 
 
-class HARec(nn.Module):
+class HERec(nn.Module):
     def __init__(self, users_items, args):
-        super(HARec, self).__init__()
+        super(HERec, self).__init__()
 
         self.c = torch.tensor([args.c]).to(device)
         self.manifold = getattr(manifolds, "Hyperboloid")()

@@ -1,4 +1,4 @@
-'''This file builds a hierarchical tree structure by clustering on hyperbolic embeddings.'''
+'''This file builds a hierarchy tree by clustering on hyperbolic embeddings.'''
 import torch
 import pickle
 import manifolds

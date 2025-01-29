@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import torch.optim as optim
 from utils.config import args
-from models.align import HARec
+from models.align import HERec
 from torch.optim import Optimizer
 from manifolds import Hyperboloid
 from rgd.rsgd import RiemannianSGD
@@ -20,7 +20,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 class Rec:
     def __init__(self):
         self.data = Data(args.dataset)
-        self.model = HARec((self.data.num_users, self.data.num_items), args).to(device)
+        self.model = HERec((self.data.num_users, self.data.num_items), args).to(device)
 
     def test(self):
         self.model.eval()
